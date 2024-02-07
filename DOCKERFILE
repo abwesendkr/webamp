@@ -1,0 +1,26 @@
+#version 0.1 ohne virtualizer und 0.2 mit
+#meine/webamp:0.1 
+# Verwende ein offizielles Node.js-Image als Basis
+FROM node:14
+
+# Setze das Arbeitsverzeichnis im Container
+WORKDIR /app
+
+# Klone das Git-Repository über HTTPS
+RUN git clone https://github.com/captbaritone/webamp.git
+
+# Navigiere in das Verzeichnis
+#WORKDIR /app/webamp/examples/webpack/
+WORKDIR /app/webamp/examples/webpackLazyLoad/
+
+# Installiere Abhängigkeiten
+RUN npm install
+
+# Installiere http-server global
+RUN npm install -g http-server
+
+# Baue das Projekt
+RUN npm run build
+
+# Starte den Webserver beim Container-Start
+CMD ["http-server"]
