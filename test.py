@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from pydub import AudioSegment
 from pydub.playback import play
 
@@ -21,3 +22,7 @@ def play_mp3_with_virtualizer(mp3_file):
 # Example usage
 mp3_file = "c:\Users\LAD\Downloads\stereo-test.mp3"
 play_mp3_with_virtualizer(mp3_file)
+=======
+#Question: How old is 
+#Answerdf
+>>>>>>> 40bdfea4 (test create new file)
